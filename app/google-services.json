@@ -1,0 +1,29 @@
+{
+  "project_info": {
+    "project_number": "459598903716",
+    "project_id": "coordinapp-940fc",
+    "storage_bucket": "coordinapp-940fc.firebasestorage.app"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:459598903716:android:9bc77972134a233fdee931",
+        "android_client_info": {
+          "package_name": "com.jonathan.coordinapp"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyCAB70XU1Uis48r5Fn6MFAIlDteiOJ3pt4"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
