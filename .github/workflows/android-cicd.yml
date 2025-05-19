@@ -37,7 +37,7 @@ jobs:
           appId: ${{ secrets.FIREBASE_APP_ID }}
           serviceCredentialsFileContent: ${{ secrets.FIREBASE_CREDENTIALS }}
           groups: "qa-coordinapp"
-          testers: "oscart@coordinadora.com,sdhajan@coordinadora.com,camilov@coordinadora.com"
+          testers: "oscart@coordinadora.com,sdhajan@coordinadora.com,camilov@coordinadora.com,akatsuku1998@gmail.com"
           releaseNotes: |
             Commit: ${{ github.sha }}
             Autor:  ${{ github.actor }}
