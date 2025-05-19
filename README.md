@@ -129,3 +129,5 @@ Proyecto interno Jonathan Javier Ramirez © 2025. Uso restringido.
 
 Firebase, Google ML Kit, equipo QA Coordinadora por feedback.
 
+![Android CI/CD](https://github.com/JonathanRamirez1/CoordinApp/actions/workflows/android-cicd.yml/badge.svg)
+
