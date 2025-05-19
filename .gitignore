@@ -1,0 +1,69 @@
+# Archivos y carpetas generados por Android Studio
+/.idea/
+.gradle/
+/build/
+
+# Archivos de construcción generados
+/app/*.apk
+/app/*.ap_
+/app/outputs/
+
+# Archivos de configuración local
+gradle.properties
+/local.properties
+
+# Carpeta de compilación de código
+/captures/
+
+# Otros archivos generados por herramientas de construcción
+*.iml
+.idea/workspace.xml
+.idea/tasks.xml
+.idea/.name
+.idea/.codeStyle.xml
+.idea/vcs.xml
+
+# Carpeta de archivos de respaldo de Android Studio
+/.idea/libraries/
+
+# Archivos de compilación de JNI
+/jniLibs/
+
+# Carpeta de generación de archivos de Data Binding
+/data_binding/
+
+# Carpeta de generación de archivos de Kotlin
+/kotlin_generated/
+
+# Archivos de configuración de ProGuard
+/proguard/
+
+# Carpetas y archivos específicos de del proyecto
+/custom_folder/
+/custom_file.txt
+
+# Keystore files
+*.jks
+*.keystore
+
+# Google Services (e.g. APIs or Firebase)
+google-services.json
+
+# Android Profiling
+*.hprof
+
+# Test build
+app/build/
+app/target/
+
+# Release
+app/release/
+
+# Kotlin session
+.kotlin/sessions/
+
+#DS_Store
+.DS_Store
+
+# Archivos temporales de respaldo
+*~
