@@ -36,6 +36,7 @@ jobs:
         with:
           appId: ${{ secrets.FIREBASE_APP_ID }}
           serviceCredentialsFileContent: ${{ secrets.FIREBASE_CREDENTIALS }}
+          groups: "qa-coordinapp"
           testers: "oscart@coordinadora.com,sdhajan@coordinadora.com,camilov@coordinadora.com"
           releaseNotes: |
             Commit: ${{ github.sha }}
