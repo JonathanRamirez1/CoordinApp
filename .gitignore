@@ -9,6 +9,7 @@
 /app/outputs/
 
 # Archivos de configuración local
+gradle.properties
 /local.properties
 
 # Carpeta de compilación de código
