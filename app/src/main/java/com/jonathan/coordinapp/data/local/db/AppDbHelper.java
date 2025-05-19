@@ -4,6 +4,9 @@ import android.content.Context;
 import android.database.sqlite.SQLiteDatabase;
 import android.database.sqlite.SQLiteOpenHelper;
 
+import javax.inject.Singleton;
+
+@Singleton
 public class AppDbHelper extends SQLiteOpenHelper {
     private static final String DB_NAME = "Jonathan.db";
     private static final int DB_VER = 1;
@@ -23,4 +26,3 @@ public class AppDbHelper extends SQLiteOpenHelper {
         onCreate(db);
     }
 }
-

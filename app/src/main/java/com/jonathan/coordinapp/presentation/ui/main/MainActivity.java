@@ -1,11 +1,13 @@
 package com.jonathan.coordinapp.presentation.ui.main;
 
 import android.content.Intent;
+import android.content.res.ColorStateList;
 import android.os.Bundle;
 import android.view.View;
 import android.view.inputmethod.EditorInfo;
 import android.view.inputmethod.InputMethodManager;
 
+import androidx.core.content.ContextCompat;
 import androidx.lifecycle.ViewModelProvider;
 import androidx.recyclerview.widget.LinearLayoutManager;
 
@@ -133,7 +135,8 @@ public class MainActivity extends DaggerAppCompatActivity {
                 }
                 case ERROR -> {
                     bind.pbLoading.setVisibility(View.GONE);
-                    bind.tilManual.setHelperText("Estructura incorrecta");
+                    bind.tilManual.setHelperText(res.error.getMessage());
+                    bind.tilManual.setHelperTextColor(ColorStateList.valueOf(ContextCompat.getColor(this, R.color.errorRed)));
                 }
             }
         });

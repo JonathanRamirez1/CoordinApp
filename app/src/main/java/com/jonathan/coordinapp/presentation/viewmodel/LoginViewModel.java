@@ -7,6 +7,8 @@ import androidx.lifecycle.ViewModel;
 import com.jonathan.coordinapp.domain.model.User;
 import com.jonathan.coordinapp.domain.usecase.LoginUseCase;
 import com.jonathan.coordinapp.domain.usecase.RestoreBackupIfNeededUseCase;
+import com.jonathan.coordinapp.utils.LocalDbException;
+import com.jonathan.coordinapp.utils.NetworkException;
 import com.jonathan.coordinapp.utils.Resource;
 
 import javax.inject.Inject;
@@ -46,7 +48,17 @@ public class LoginViewModel extends ViewModel {
                         .observeOn(AndroidSchedulers.mainThread())
                         .subscribe(
                                 user -> loginState.setValue(Resource.success(user)),
-                                err -> loginState.setValue(Resource.error(err))
+                                err -> {
+                                    String msg;
+                                    if (err instanceof NetworkException)
+                                        msg = "Error de red. Inténtalo de nuevo.";
+                                    else if (err instanceof LocalDbException)
+                                        msg = "No se pudo acceder a la BD local.";
+                                    else
+                                        msg = err.getMessage();
+
+                                    loginState.setValue(Resource.error(new Throwable(msg)));
+                                }
                         )
         );
     }

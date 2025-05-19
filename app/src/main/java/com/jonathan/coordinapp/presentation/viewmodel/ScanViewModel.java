@@ -7,6 +7,8 @@ import androidx.lifecycle.ViewModel;
 import com.jonathan.coordinapp.domain.model.Scan;
 import com.jonathan.coordinapp.domain.usecase.LogoutUseCase;
 import com.jonathan.coordinapp.domain.usecase.SendScanUseCase;
+import com.jonathan.coordinapp.utils.LocalDbException;
+import com.jonathan.coordinapp.utils.NetworkException;
 import com.jonathan.coordinapp.utils.Resource;
 import com.jonathan.coordinapp.utils.ValidateText;
 
@@ -40,8 +42,18 @@ public class ScanViewModel extends ViewModel {
                 validate.execute(base64)
                         .observeOn(AndroidSchedulers.mainThread())
                         .subscribe(
-                                r -> result.setValue(Resource.success(r)),
-                                e -> result.setValue(Resource.error(e))
+                                scan -> result.setValue(Resource.success(scan)),
+                                error -> {
+                                    String msg;
+                                    if (error instanceof NetworkException) {
+                                        msg = "Error de red. Verifica conexión e inténtalo de nuevo.";
+                                    } else if (error instanceof LocalDbException) {
+                                        msg = "No se pudo guardar en la base local.";
+                                    } else {
+                                        msg = error.getMessage();
+                                    }
+                                    result.setValue(Resource.error(new Throwable(msg)));
+                                }
                         )
         );
     }
